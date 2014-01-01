@@ -78,12 +78,12 @@
 		           	margin: 0px auto;
 		           	position:fixed;
 		           	/*z-index: 0;*/
-		           	height:50px;
+		           	height:45px;
 		           	background-color: #ffffff;
 		           }
 		           #chart
 		           {
-		           	height:3000px;
+		           	height:1753px;
 
 		           }
 		           #feed
@@ -113,11 +113,19 @@
 		           ul
 		           {
 		           	margin: 0px;
-		           	border: 2px rgb(221, 221, 221);
-		           	border-style: dotted none none none;
+		           	/*border: 2px rgb(221, 221, 221);*/
+		           	/*border-style: dotted none none none;*/
 		           	padding-top: 0px;
 		           	padding-left: 2px;
+		           	padding-right: 2px;
+		           	
 		           	list-style-type: none;
+		           	border-style: none none solid none;
+		           	border-color:#ffffff;
+		           	border-width: 2px;
+		           	border-bottom-right-radius: 4px;
+		           	border-bottom-left-radius: 4px;
+
 
 		           }
 		           #word
@@ -216,6 +224,57 @@
 		              height:98px;
 
 		           }
+		            .advert
+		            {
+		             background:#ECE9D8;
+		             padding: 10px;
+
+		           }
+		             .more{
+		              background:#329FE1;
+		              color:#ffffff;
+		              border-style: dotted none none none;
+		             padding: 0px;
+		             font-family: "Pacifico";
+		             font-size: 20px;
+		             padding-right: 0px;
+		             border-bottom-right-radius: 4px;
+		           border-bottom-left-radius: 4px;
+		           }
+		           .rant
+		           {
+		           	width:180px;
+		           	float:left;
+		           	margin:10px;
+		           }
+		           .love{
+		              float: right;
+		              width:172px;
+		              border-bottom-right-radius: 4px;
+		           }
+		           .beg{
+		              overflow: hidden;
+		              position: relative;
+		              width:152px;
+		              font-family: "Pacifico";
+		              font-size: 20px;
+		              background:#ED6298;!#5596B6;
+		              padding:10px;
+		              border-bottom-right-radius: 4px;
+		           }
+		           .share{
+		              position:absolute;
+		              top: 0;
+		              right: -172px;
+		              width: 152px;
+		              font-family: "Pacifico";
+		              font-size: 20px;
+		              background:#FED200;/*#A44398;!#F16522;!#5596B6;!#EE4034*/
+		              padding:10px;
+		              border-bottom-right-radius: 4px;
+		              color: #333333;
+		              
+		           }
 
 
 
@@ -235,7 +294,7 @@
 			<div id="pitchContainer">
 
 				<div id="pitch">
-					<div id="word"><img class="pitchImages" src="images/images 40.png">40 million images</div>
+					<div id="word"><img class="pitchImages" src="images/images 40.png">40 million images*</div>
 					<div>added to internet <span style="color: #FEBF00">everyday</span></div>
 					<div>but I have time for just few</div>
 					<div>what those few should be?</div>
@@ -393,6 +452,37 @@
 						   			2k 4mins
 						 		</div>
 						 	</li>
+
+						 	<li class="item advert">
+						 		<div class = "stats">
+						 		advertisement
+						 		</div>
+						 		<div class = "title">
+						 			You give us your UI psd we give you HTML and CSS 
+						 		</div>
+						 		<div class = "description">
+						 			just design your UI iin phooshop using all its convininet tools and we shall do the heavy lifting conerting it to cross browser HTML and CSS
+						 		</div>
+						 		<div class = "stats">
+						 			psd2html.com
+						 		</div>
+						 	</li>
+
+						 	<li class="item more">
+						 		<div class="rant">
+						 	  		more ! more ! more !
+						 	  	</div>
+						 	  	<img src="Images/whiningmonkey.gif">
+						 		<div class="love">
+						 	  		<div class="beg"><img src="Images/heart.png" >
+						 	    			show some love
+						 	    			<div class="share"><img src="Images/heart.png" >facebook</div>
+						 	  		</div>
+							 	</div>   
+						 	</li>
+
+
+
 						 </ul>
 					</div>
 				</div>
@@ -425,7 +515,7 @@
 			    sticky_relocate();
 			});
 
-			  var words = ['<img class="pitchImages" src="images/videos 40.png">10 million videos', '<img class="pitchImages" src="images/articles 40.png">120 million articles', '<img class="pitchImages" src="images/images 40.png">40 million images'];
+			  var words = ['<img class="pitchImages" src="images/videos 40.png">10 million videos*', '<img class="pitchImages" src="images/articles 40.png">120 million articles*', '<img class="pitchImages" src="images/images 40.png">40 million images*'];
 			  var index = 0;//start with 0, first array index is 0
 			  var $word = $('#word');
 			
@@ -461,6 +551,31 @@
 			            return false;
 			        }
 			    }
+			});
+
+			/////////////////////////////show some love
+
+			$(document).ready(function(){
+			      $(".beg").mouseover(function(){
+
+			        /*$("#beg").stop().animate({
+			                  left: '-172px'    
+			          }, 500); */
+
+			     $(".share").stop().animate({
+			                  right: 0    
+			          }, 500);                        
+			      }).mouseout(function(){
+
+			              /*$("#beg").stop().animate({
+			                  left: 0    
+			          }, 500); */
+
+
+			             $(".share").stop().animate({
+			              right: '-172px'    
+			          }, 500);     
+			      });
 			});
 
 
