@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="Nadeem Khan">
+
+		<title>choicio - whole web's choiciest stuff</title>
+
+		<link rel="shortcut icon" href="Images/candy 02 cropped 16.png" />
+
+		<script src="Js/jquery.min.js"></script>
+
+		<style type="text/css">
+		            <!--
+		            body
+		           {
+			           background: none repeat scroll 0% 0% #988569; /* background */
+			           margin: 0px;
+			           /*position:relative;*/
+    				/*z-index:0;*/
+			}
+			#toolbar
+			{
+				height:40px;
+				width:100%;
+				background-color: #272822;
+				position: fixed;
+				top: 0px;
+				z-index: 1000;
+			}
+		           #pitchLayer
+		           {
+		           	z-index:1;/*z-index:-2;*/
+		           	position:relative;
+		           	/*text-align: center;*/
+		           	height: 600px;
+		           }
+		           #chartBarAnchor
+		           {
+		           	height: 100px;
+		           	margin: 0px;
+		           	padding: 0px;
+		           }
+		           #chartBar
+		           {
+		           	height: 100px;
+		           	background: none repeat scroll 0% 0% #272822;
+		           	
+		           	
+		           	/*position: relative;*/
+		           		           	
+		           }
+		           #chartLayer
+		           {
+		           	background: none repeat scroll 0% 0% #FFEDD1; /*rgb(253, 42, 106);*/
+		           	/*background-image: url("Images/other pattern 02.jpg");
+		           	background-repeat: repeat;*/
+
+		           	position: relative;
+		           	z-index: 2; /*z-index: 1;*/
+		           	/*box-shadow: 0 3px 3px rgba(0,0,0,0.2);*/
+		           	/*box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.18), 0px -5px 4px rgba(0, 0, 0, 0.18);*/
+		           	/*box-shadow: 0px 0px 6px rgb(17, 17, 17);*/
+		           	margin: 0px;
+		           }
+		           #chartContainer
+		           {
+		           	width:480px;
+		           	margin: 0px auto;
+		           }
+		           #pitchContainer
+		           {
+		           	width:100%;
+		           	margin: 0px auto;
+		           	position:fixed;
+		           	/*z-index: 0;*/
+		           	height:50px;
+		           	background-color: #ffffff;
+		           }
+		           #chart
+		           {
+		           	height:3000px;
+
+		           }
+		           #feed
+		           {
+		           	background-color: #ffffff;
+		           }
+		           #pitch
+		           {
+		           	position: fixed !important;
+		           	top:20px;
+		           	left:35%;
+		           	color:#333333;#272822;#988569;
+		           	font-family: 'Georgia';
+		           	font-size: 30px;
+		           	line-height: 25px;
+		           	margin-top: 100px;
+		           	width:450px;
+		           	text-align: justify;
+		           }
+		           .stick
+		           {
+		           	position: fixed;
+    				top: 40px;
+    				z-index: 1000;
+    				width:480px;
+		           }
+		           ul
+		           {
+		           	margin: 0px;
+		           	border: 2px rgb(221, 221, 221);
+		           	border-style: dotted none none none;
+		           	padding-top: 0px;
+		           	padding-left: 2px;
+		           	list-style-type: none;
+
+		           }
+		           #word
+		           {
+		           	font-size: 50px;
+		           	font-family: "Dauphin";
+		           	line-height:65px;
+		           	color:#ffffff;#272822;
+		           }
+		           .pitchImages
+		           {
+		           	float: left;
+		           	margin-right: 10px;
+		           	margin-top: 10px;
+		           	height:40px;
+
+		            }
+		            #explanation
+		            {
+		            	font-size: 16px;
+		            	color:#FFEDD1;#FD2A6A;
+		            	width:350px;
+		            	line-height:18px;
+		            	text-align: justify;
+		            }
+		            #brand
+		            {
+		            	margin-top: 20px;
+		            	width:180px;
+		            	margin-left: 50px;
+		            }
+		            #logo
+		            {
+		            	margin-top: 6px;
+		            	margin-right: auto;
+		            	margin-left: auto;
+		            	width:200px;
+		            }
+		            #search {
+
+		            }
+
+
+		            #search input[type="text"] {
+		                background: url("Images/lookingGlass.png") no-repeat 10px 6px #444;
+		                border: 0 none;
+		                font: bold 12px Arial,Helvetica,Sans-serif;
+		                color: #d7d7d7;
+		                width:420px;
+		                padding: 6px 15px 6px 35px;
+		                margin:5px;
+		                -webkit-border-radius: 20px;
+		                -moz-border-radius: 20px;
+		                border-radius: 20px;
+		                text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); 
+		                -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		                -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		                -webkit-transition: all 0.7s ease 0s;
+		                -moz-transition: all 0.7s ease 0s;
+		                -o-transition: all 0.7s ease 0s;
+		                transition: all 0.7s ease 0s;
+		                }
+
+		            #search input[type="text"]:focus {
+		                background: url("Images/lookingGlass.png") no-repeat 10px 6px #fcfcfc;
+		                color: #6a6f75;
+		                -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		                -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		                text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+		                }
+		           .title
+		           {
+		                     color: #CC2666;
+		                    font-weight:bold;
+		                     font-family: "Helvetica";
+		                     
+		           }
+		           .description
+		           {
+		                     font-size: 10px;
+		                     color:#6D7C89;
+		                     font-family: "Tahoma";
+		                     line-height: 12px;
+		           }
+		           .stats
+		           {
+		                    font-size: 10px;
+		                    color:#8C7F1F;
+		                    font-family: "Arial";
+		           }
+		           .thumb{
+		              float: left;
+		              margin-right: 10px;
+		              height:98px;
+
+		           }
+
+
+
+		           -->
+	           </style>
+	</head>
+
+	<body>
+
+		<div id="toolbar">
+			<div id="logo"><img src="images/candy 02 cropped 28.png" ><img src="images/Logo - Choicio - Sticker 28.png"></div>
+
+		</div>
+
+		<div id="pitchLayer">
+			
+			<div id="pitchContainer">
+
+				<div id="pitch">
+					<div id="word"><img class="pitchImages" src="images/images 40.png">40 million images</div>
+					<div>added to internet <span style="color: #FEBF00">everyday</span></div>
+					<div>but I have time for just few</div>
+					<div>what those few should be?</div>
+					<div><span style="color: #FEBF00">only the best! </span>presenting...</div>
+					<div id="brand"><img src="images/candy 02 cropped 40.png" ><img src="images/Logo - Choicio - Sticker 40.png"></div>
+					
+					<div id="explanation"><br>daily updated popularity charts for web content. sort of billboard top 100 of web content. the most shared, liked, tweeted, linkedIn, pinned content matching your interests across web. give it a try. what is an interest. what is popularity and best. technology. login</div>
+				</div>
+
+			</div>
+		</div>
+
+		
+
+		<div id="chartLayer">
+
+
+			
+
+			
+			<div id="chartContainer">
+
+				<div id="chartBarAnchor">
+					<div id="chartBar">
+						
+						<form method="get" action="/search" id="search">
+						  <input name="q" type="text" size="40" placeholder="eg web development" />
+						</form>
+						
+
+					</div>
+				</div>
+				
+				<div id="chart">
+
+					<div id="feed">
+						<ul>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 	<li class="item">
+						  		<img class="thumb" src="Images/pink.png">
+						  		<div class = "title">
+						    			Dynamically generate checkboxes in Bootstrap 3
+						  		</div>
+						  		<div class = "description">
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						  		</div>
+						  		<div class = "stats">
+						   			2k 4mins
+						 		</div>
+						 	</li>
+						 </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<script>
+			
+			function sticky_relocate() {
+			    var window_top = $(window).scrollTop()+40;
+			    var div_top = $('#chartBarAnchor').offset().top;
+			    if (window_top > div_top) {
+			        $('#chartBar').addClass('stick');
+			    } else {
+			        $('#chartBar').removeClass('stick');
+			    }
+			}
+
+			$(function () {
+			    $(window).scroll(sticky_relocate);
+			    sticky_relocate();
+			});
+
+			  var words = ['<img class="pitchImages" src="images/videos 40.png">10 million videos', '<img class="pitchImages" src="images/articles 40.png">120 million articles', '<img class="pitchImages" src="images/images 40.png">40 million images'];
+			  var index = 0;//start with 0, first array index is 0
+			  var $word = $('#word');
+			
+			  setInterval(function () {
+			  if (index == words.length) {
+			//if current index is equal to the arrays length reset it to 0
+			  index = 0;
+			    }
+			//slideUp to hide
+			$word.slideUp(500, function () {
+			//on animation complete hidden change the text then slideDown to show
+			$word.html(words[index]).slideDown(500);
+			/*
+			It's always a good practice to separate increment/decrement in a single line, 
+			as it might confuse some(especially new) programmers
+			*/
+			index++;
+			});   
+			}, 2000);
+
+			//////////////////////////smooth scrolling
+
+			$('a[href*=#]:not([href=#])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+			        || location.hostname == this.hostname) {
+
+			        var target = $(this.hash);
+			        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			           if (target.length) {
+			             $('html,body').animate({
+			                 scrollTop: target.offset().top
+			            }, 1000);
+			            return false;
+			        }
+			    }
+			});
+
+
+
+
+		</script>
+
+
+	</body>
+
+</html>
+
