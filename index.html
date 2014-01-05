@@ -13,6 +13,7 @@
 		<link rel="shortcut icon" href="Images/candy_02_cropped_16.png" />
 
 		<script src="Js/jquery.min.js"></script>
+		<script type="text/javascript" src="Js/tinycarousel.js"></script>
 
 		<style type="text/css">
 		            <!--
@@ -87,7 +88,7 @@
 		           	position:fixed;
 		           	/*z-index: 0;*/
 		           	height:43px;
-		           	background-color: #AAF200;#FEBF00;#FD2A6A;#CA00EF;#FFDC01;#1DC2FF;#ffffff;
+		           	background-color: #FEBF00;#AAF200;#FD2A6A;#CA00EF;#FFDC01;#1DC2FF;#ffffff;
 		           }
 		           #chart
 		           {
@@ -288,6 +289,13 @@
 		              color: #333333;
 		              
 		           }
+		           #slider1 { height: 1%; overflow:hidden; padding: 0 0 0px;   }
+		           #slider1 .viewport { float: left; width: 361px; height: 73px; overflow: hidden; position: relative; }
+		           /*#slider1 .buttons { background:url("../images/buttons.png") no-repeat scroll 0 0 transparent; display: block; margin: 30px 10px 0 0; background-position: 0 -38px; text-indent: -999em; float: left; width: 39px; height: 37px; overflow: hidden; position: relative; }*/
+		           #slider1 .next { background-position: 0 0; margin: 30px 0 0 10px;  }
+		           #slider1 .disable { visibility: hidden; }
+		           #slider1 .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 240px; left: 0 top: 0; }
+		           #slider1 .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 0px solid #dcdcdc; width: 236px;}
 
 
 
@@ -307,7 +315,18 @@
 			<div id="pitchContainer">
 
 				<div id="pitch">
-					<div id="word"><img class="pitchImages" src="Images/images_40.png">40 million images*</div>
+					<div id="slider1">
+						<!--<a class="buttons prev" href="#">left</a>-->
+						<div class="viewport">
+							<ul class="overview">
+								<li><img src="Images/articlesCount.png" /></li>
+								<li><img src="Images/imagesCount.png" /></li>
+								<li><img src="Images/videosCount.png" /></li>									
+							</ul>
+						</div>
+						<!--<a class="buttons next" href="#">right</a>-->
+					</div>
+					
 					<div>added to internet <span style="color: #FEBF00; text-shadow: 1px 1px 1px rgba(39, 40, 34, 0.8);">everyday</span></div>
 					<div>but I have time for just few</div>
 					<div>what those few should be?</div>
@@ -530,7 +549,7 @@
 
 			//////////////////////////pitch animation
 
-			  var words = ['<img class="pitchImages" src="Images/videos_40.png">10 million videos*', '<img class="pitchImages" src="Images/articles_40.png">120 million articles*', '<img class="pitchImages" src="Images/images_40.png">40 million images*'];
+			 /* var words = ['<img class="pitchImages" src="Images/videos_40.png">10 million videos*', '<img class="pitchImages" src="Images/articles_40.png">120 million articles*', '<img class="pitchImages" src="Images/images_40.png">40 million images*'];
 			  var index = 0;//start with 0, first array index is 0
 			  var $word = $('#word');
 			
@@ -543,13 +562,13 @@
 			$word.slideUp(500, function () {
 			//on animation complete hidden change the text then slideDown to show
 			$word.html(words[index]).slideDown(500);
-			/*
-			It's always a good practice to separate increment/decrement in a single line, 
-			as it might confuse some(especially new) programmers
-			*/
+						
+			//It's always a good practice to separate increment/decrement in a single line, 
+			//as it might confuse some(especially new) programmers
+			
 			index++;
 			});   
-			}, 2000);
+			}, 2000);*/
 
 			//////////////////////////smooth scrolling
 
@@ -591,6 +610,14 @@
 			              right: '-172px'    
 			          }, 500);     
 			      });
+
+			      	//////////////////////// pitch slider
+			      	var pitchSlider = $('#slider1');
+			      	pitchSlider.tinycarousel({controls: true, axis: 'y', interval: true, controls: false, intervaltime: 2500, duration: 1000});
+			      	pitchSlider.tinycarousel_start();
+
+
+
 			});
 
 
