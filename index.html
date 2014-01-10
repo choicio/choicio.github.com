@@ -8,12 +8,16 @@
 		<meta name="description" content="">
 		<meta name="author" content="Nadeem Khan">
 
-		<title>choicio - whole web's choiciest stuff</title>
+		<title>choicio - web's choiciest stuff</title>
 
 		<link rel="shortcut icon" href="Images/candy_02_cropped_16.png" />
 
 		<script src="Js/jquery.min.js"></script>
 		<script type="text/javascript" src="Js/tinycarousel.js"></script>
+		<script src="Js/handlebars1.3.0min.js"></script>
+		<script src="Js/handlebars1.3.0.js"></script>
+		<script src="Js/parse-1.2.16.min.js"></script>
+		<script>Parse.initialize("RxARF6xSnf7HYELxlpmdkBK5V3zA50Xmh0gBfhg8", "ocpjqwNTkwGH6rLjqHQHhFJPfI3iHDGR94k4Ni35");</script>
 
 		<style type="text/css">
 		            <!--
@@ -83,10 +87,13 @@
 		           	/*box-shadow: 0 -1px 3px rgba(0,0,0,0.5);*/
 		           	/*box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.18), 0px -5px 4px rgba(0, 0, 0, 0.18);*/
 		           	/*box-shadow: 0px 0px 6px rgb(17, 17, 17);*/
+		           	/*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+		           	box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;*/
 		           	margin: 0px;
 		           	border-top: dotted;
 		           	border-color: #988569;
 		           	border-top-width: 2px;
+
 		           }
 		           #chartContainer
 		           {
@@ -119,7 +126,9 @@
 		           {
 		           	position: fixed !important;
 		           	top:20px;
-		           	left:36%;
+		           	/*left:36%;*/
+		           	margin-left:auto;
+		           	/*margin-right: auto;*/
 		           	color:#333333;#272822;#988569;
 		           	font-family: 'Georgia';
 		           	font-size: 30px;
@@ -136,7 +145,7 @@
     				z-index: 1000;
     				width:480px;
 		           }
-		           ul
+		           #chartList, #decorationList
 		           {
 		           	margin: 0px;
 		           	/*border: 2px rgb(221, 221, 221);*/
@@ -190,7 +199,7 @@
 		            	margin-top: 6px;
 		            	margin-right: auto;
 		            	margin-left: auto;
-		            	width:200px;
+		            	width:124px;
 		            }
 		            #search {
 
@@ -225,6 +234,7 @@
 		                -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
 		                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
 		                text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+		                box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 		                }
 		           .title
 		           {
@@ -232,6 +242,8 @@
 		                    font-weight:bold;
 		                     font-family: "Helvetica";
 		                     text-decoration:none;
+		                     height:2.5em;
+		                     overflow: hidden;
 		                     
 		           }
 		           .description
@@ -240,6 +252,27 @@
 		                     color:#6D7C89;
 		                     font-family: "Tahoma";
 		                     line-height: 12px;
+		                     height:6em;
+		                     margin-top:2px;
+		                     overflow: hidden;
+		           }
+		           .advertTitle
+		           {
+		                     color: #CC2666;
+		                    font-weight:bold;
+		                     font-family: "Helvetica";
+		                     text-decoration:none;
+		                     overflow: hidden;
+		                     
+		           }
+		           .advertDescription
+		           {
+		                     font-size: 10px;
+		                     color:#6D7C89;
+		                     font-family: "Tahoma";
+		                     line-height: 12px;
+		                     margin-top:2px;
+		                     overflow: hidden;
 		           }
 		           .stats
 		           {
@@ -250,7 +283,7 @@
 		           .thumb{
 		           	float: left;
 		           	margin-right: 10px;
-		           	height:98px;
+		           	height:100px;
 
 		           }
 		            .advert
@@ -385,6 +418,7 @@
 		           	list-style-type: none;
 		           	text-align: center;
 		           	border-style: none none none none;
+		           	padding-left:0px;
 		           	
 		           }
 		           #social ul li { display: inline; }
@@ -397,6 +431,8 @@
 	</head>
 
 	<body>
+		<div id="pitchContainer">
+		</div>
 
 		<div id="toolbar">
 			<div id="logo"><img src="Images/candy_02_cropped_28.png" ><img src="Images/Logo_Choicio_Sticker_28.png"></div>
@@ -405,7 +441,7 @@
 
 		<div id="pitchLayer">
 			
-			<div id="pitchContainer">
+			
 
 				<div id="pitch">
 					<div id="slider1">
@@ -420,15 +456,14 @@
 						<!--<a class="buttons next" href="#">right</a>-->
 					</div>
 					
-					<div><img src="Images/Itch.png"></img></div>
+					<div><img src="Images/Itch350.png"></img></div>
 					
 					<!--<div>added to internet <span style="color: #FEBF00; text-shadow: 1px 1px 1px rgba(39, 40, 34, 0.8);">everyday</span></div>
 					<div>but I have time for just few</div>
 					<div>what those few should be?</div>
 					<div><span style="color: #FEBF00; text-shadow: 1px 1px 1px rgba(39, 40, 34, 0.8);">only the best! </span>presenting...</div>-->
 					<div id="brand">
-						<img src="Images/candy_02_cropped_40.png" >
-						<img src="Images/Logo_Choicio_Sticker_40.png">
+						<img src="Images/candy_02_cropped_40.png" ><img src="Images/Logo_Choicio_Sticker_40.png">
 					</div>
 					
 					
@@ -437,18 +472,17 @@
 					
 					<div id="social">
 						<ul>
-							<li><img src="Images/facebookR32.png"></img></li>
-							<li><img src="Images/twitterR32.png"></img></li>
-							<li><img src="Images/youtubeR32.png"></img></li>
-							<li><img src="Images/pinterestR32.png"></img></li>
-							<li><img src="Images/linkedinR32.png"></img></li>
-							<li><img src="Images/googleplusR32.png"></img></li>
-							<li><img src="Images/rssR32.png"></img></li>
+							<li><a style="border:0;" href="https://www.facebook.com/choicio.choiciest" target="_blank"><img src="Images/facebookR32.png"></img></a></li>
+							<li><a style="border:0;" href="https://twitter.com/choicio" target="_blank"><img src="Images/twitterR32.png"></img></a></li>
+							<li><a style="border:0;" href="http://www.youtube.com/choicio" target="_blank"><img src="Images/youtubeR32.png"></img></a></li>
+							<li><a style="border:0;" href="http://www.pinterest.com/choicio/" target="_blank"><img src="Images/pinterestR32.png"></img></a></li>
+							<li><a style="border:0;" href="http://www.linkedin.com/in/choicio" target="_blank"><img src="Images/linkedinR32.png"></img></a></li>
+							<li><a style="border:0;" href="https://plus.google.com/102899348033697570845/about?hl=en_US" target="_blank"><img src="Images/googleplusR32.png"></img></a></li>
+							<li><a style="border:0;" href="http://choicio.tumblr.com" target="_blank"><img src="Images/rssR32.png"></img></a></li>
 						</ul>
 					</div>
 				</div>
 
-			</div>
 		</div>
 
 		
@@ -464,8 +498,8 @@
 				<div id="chartBarAnchor">
 					<div id="chartBar">
 						
-						<form method="get" action="/search" id="search">
-						  <input name="q" type="text" size="40" placeholder="eg web development" />
+						<form id="search">
+						  <input id="searchbox" type="text" size="40" placeholder="eg web development" />
 						</form>
 						
 						
@@ -476,7 +510,7 @@
 				<div id="chart">
 
 					<div id="feed">
-						<ul>
+						<ul id="chartList">
 		 	
 						  	<li class="item">
 						  		<img class="thumb" src="Images/water.jpg">
@@ -486,9 +520,7 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/fall.jpg">
@@ -498,9 +530,7 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/gradient.jpg">
@@ -510,9 +540,7 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/tuscany.jpg">
@@ -522,9 +550,7 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/green.jpg">
@@ -534,22 +560,17 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  	
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/grey.jpg">
 						  		<div class = "title">
-						    			<a href="http://edition.cnn.com/"><img src="http://edition.cnn.com/favicon.ico"></a> 6. World's most awesome web content's title goes in here <span style="font-size: 10px; color:#4285F4; font-family: 'Tahoma'; line-height: 12px; text-decoration:none;"> edition.cnn.com</span>
-						    			<div class = "description">
-						    			  	world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
-						    			</div>
-						    			
-						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						    			6. World's most awesome web content's title goes in here 
+						    		</div>
+						    		<div class = "description">
+						    		  	world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    		</div>
+						    						  							  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/leaf.jpg">
@@ -559,9 +580,7 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/orange.jpg">
@@ -571,9 +590,7 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/sunlight.jpg">
@@ -581,11 +598,9 @@
 						    			9. World's most awesome web content's title goes in here
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 						 	<li class="item">
 						  		<img class="thumb" src="Images/teal.jpg">
@@ -595,19 +610,20 @@
 						  		<div class = "description">
 						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
 						  		</div>
-						  		<div class = "stats">
-						   			2k 4mins
-						 		</div>
+						  		
 						 	</li>
 
+
+						 </ul>
+						 <ul id="decorationList">
 						 	<li class="item advert">
 						 		<div class = "stats">
 						 		advertisement
 						 		</div>
-						 		<div class = "title">
+						 		<div class = "advertTitle">
 						 			You give us your UI psd we give you HTML and CSS 
 						 		</div>
-						 		<div class = "description">
+						 		<div class = "advertDescription">
 						 			just design your UI iin phooshop using all its convininet tools and we shall do the heavy lifting conerting it to cross browser HTML and CSS
 						 		</div>
 						 		<div class = "stats">
@@ -627,10 +643,7 @@
 						 	  		</div>
 							 	</div>   
 						 	</li>
-
-
-
-						 </ul>
+						 </ul>	 
 					</div>
 				</div>
 			</div>
@@ -641,9 +654,17 @@
 
 
 
-
-
-
+		<script type="text/x-handlebars-template" id="itemTemplate">
+			<li class="item">
+		 		<img class="thumb" src="Images/teal.jpg">
+		 		<div class = "title">
+		   			{{ title }}
+		 		</div>
+		 		<div class = "description">
+		   			{{ description }}
+		 		</div>
+		 	</li>
+		</script>
 
 		<script>
 			
@@ -655,14 +676,14 @@
 			    } else {
 			        $('#chartBar').removeClass('stick');
 			    }
-			}
+			}//sticky_relocate()
 
 			$(function () {
 			    $(window).scroll(sticky_relocate);
 			    sticky_relocate();
 			});
 
-			//////////////////////////pitch animation
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////pitch animation
 
 			 /* var words = ['<img class="pitchImages" src="Images/videos_40.png">10 million videos*', '<img class="pitchImages" src="Images/articles_40.png">120 million articles*', '<img class="pitchImages" src="Images/images_40.png">40 million images*'];
 			  var index = 0;//start with 0, first array index is 0
@@ -685,7 +706,7 @@
 			});   
 			}, 2000);*/
 
-			//////////////////////////smooth scrolling
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////smooth scrolling
 
 			$('a[href*=#]:not([href=#])').click(function() {
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
@@ -702,7 +723,7 @@
 			    }
 			});
 
-			/////////////////////////////show some love
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////show some love
 
 			$(document).ready(function(){
 			      $(".beg, .begLast").mouseover(function(){
@@ -726,14 +747,61 @@
 			          }, 500);     
 			      });
 
-			      	//////////////////////// pitch slider
+			      	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// pitch slider
 			      	var pitchSlider = $('#slider1');
 			      	pitchSlider.tinycarousel({controls: true, axis: 'y', interval: true, controls: false, intervaltime: 2500, duration: 1000});
 			      	pitchSlider.tinycarousel_start();
 
+			      	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////parse
+			      	$('#searchbox').keypress(function (e)
+			      	{
+			      	 	e.preventDefault();
+			      	 	if (e.which == 13) 
+			      	 	{
+			      	                    console.log("enter pressed");
 
+			      	                    var Content = Parse.Object.extend("Content");
+			      	                    var query = new Parse.Query(Content);
+			      	                    query.descending("creed");
+			      	                    query.limit(10);
+			      	                    query.find({
+			      	                    	success: function(results){
+			      	                    		var template  = Handlebars.compile($("#itemTemplate").html());
+			      	                    		$(results).each(function(i,e){
+			      	                    			var q = e.toJSON();
+			      	                    			$("#chartList").append(template(q));
+			      	                    		});//each
 
-			});
+			      	                    	},//success
+			      	                    	error: function(error){
+			      	                    		console.log(error.message);
+			      	                    	}//error
+			      	                    });//query.find
+			      	           }
+
+			      	});//enter keypress
+
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////resposive
+
+				function gravity()
+				{
+					var window_width = $(window).width();
+					var window_height = $(window).height();
+					var container = $("#pitch");
+					container.css('left', (window_width / 2) - (container.width() / 2));
+					if(window_height<container.height()){
+						container.css('position', 'relative');
+					}else{
+						container.css('position', 'fixed');
+					}
+				}//gravity
+
+				gravity();
+				$(window).resize(function(){
+					gravity();
+				});//window.resize
+
+			});//document ready
 
 
 
