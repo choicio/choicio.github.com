@@ -101,7 +101,7 @@
 		           	box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;*/
 		           	margin: 0px;
 		           	border-top: dotted;
-		           	border-color: #988569;
+		           	border-color: #988569;#FEBF00;#3D352A;#ffffff;
 		           	border-top-width: 2px;
 
 		           }
@@ -432,15 +432,53 @@
 		           #social ul li { display: inline; }
 
 		           ::selection {		
-		           background:#FFC11F;
+		           background:#FEBF00;
 		           }
 
 		           ::-moz-selection {
-		           background:#FFC11F;
+		           background:#FEBF00;
 		           }
 
 		           ::-webkit-selection {
-		           background:#FFC11F;
+		           background:#FEBF00;
+		           }
+		           .item
+		           {
+		           	/*border-style: dotted none none none;
+		           	border-width: 1px;
+		           	border-color: #3D352A;*/
+		           }
+		           #menu
+		           {
+		           	margin-right:5px;
+		           	right:0;
+		           	position: absolute;
+		           }
+		           #menuList
+		           {
+		           	background-color: #FAFAFA;#FEBF00;#3D352A;
+		           	width:150px;
+		           	right:0;
+		           	position: absolute;
+		           	border-radius: 3px;
+		           	margin-top: 6px;
+		           	margin-right: 5px;
+		           	font-family: "Georgia";
+		           	font-weight: bold;
+		           	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+		           }
+		           #menuList ul
+		           {
+		           	border-radius: 4px;
+		           }
+		           #menuList ul li
+		           {
+		           	border-bottom: 1px dotted #988569; 
+		           	padding-left:30px;
+		           	padding-right:40px;
+		           	padding-top:8px;
+		           	padding-bottom:8px;
+		           	
 		           }
 
 
@@ -456,10 +494,18 @@
 		</div>
 
 		<div id="toolbar">
+			<div id="menu"><img src="Images/menuSlim.png" ></div>
 			<div id="logo"><img src="Images/candy_02_cropped_28.png" ><img src="Images/Logo_Choicio_Sticker_28.png"></div>
-
+			<div id="menuList">
+				<ul style="list-style-type: none; padding-left:0px; margin-top:0px; margin-bottom:0px; border-radius: 3px;">
+					<a style="text-decoration: none; color: #333333;#3D352A; outline: none;" href="info.html" target="_blank"><li style="padding-top:8px;border-top-right-radius:3px;border-top-left-radius:3px;">about</li></a>
+					<a style="text-decoration: none; color: #333333;#3D352A; outline: none;"  href="info.html" target="_blank"><li>help</li></a>
+					<a style="text-decoration: none; color: #333333;#3D352A; outline: none;"  href="info.html" target="_blank"><li>investors</li></a>
+					<a style="text-decoration: none; color: #333333; #3D352A; outline: none;"  href="http://choicio.tumblr.com/" target="_blank"><li style="border-bottom: 2px none #988569;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;">blog</li></a>
+				</ul>
+			</div>
 		</div>
-
+		
 		<div id="pitchLayer">
 			
 			
@@ -493,13 +539,13 @@
 					
 					<div id="social">
 						<ul>
-							<li><a style="border:0;" href="https://www.facebook.com/choicio.choiciest" target="_blank"><img src="Images/facebookR32.png"></img></a></li>
-							<li><a style="border:0;" href="https://twitter.com/choicio" target="_blank"><img src="Images/twitterR32.png"></img></a></li>
-							<li><a style="border:0;" href="http://www.youtube.com/choicio" target="_blank"><img src="Images/youtubeR32.png"></img></a></li>
-							<li><a style="border:0;" href="http://www.pinterest.com/choicio/" target="_blank"><img src="Images/pinterestR32.png"></img></a></li>
-							<li><a style="border:0;" href="http://www.linkedin.com/in/choicio" target="_blank"><img src="Images/linkedinR32.png"></img></a></li>
-							<li><a style="border:0;" href="https://plus.google.com/102899348033697570845/about?hl=en_US" target="_blank"><img src="Images/googleplusR32.png"></img></a></li>
-							<li><a style="border:0;" href="http://choicio.tumblr.com" target="_blank"><img src="Images/rssR32.png"></img></a></li>
+							<li><a style="outline: none;" href="https://www.facebook.com/choicio.choiciest" target="_blank"><img src="Images/facebookR32.png"></img></a></li>
+							<li><a style="outline: none;" href="https://twitter.com/choicio" target="_blank"><img src="Images/twitterR32.png"></img></a></li>
+							<li><a style="outline: none;" href="http://www.youtube.com/choicio" target="_blank"><img src="Images/youtubeR32.png"></img></a></li>
+							<li><a style="outline: none;" href="http://www.pinterest.com/choicio/" target="_blank"><img src="Images/pinterestR32.png"></img></a></li>
+							<li><a style="outline: none;" href="http://www.linkedin.com/in/choicio" target="_blank"><img src="Images/linkedinR32.png"></img></a></li>
+							<li><a style="outline: none;" href="https://plus.google.com/102899348033697570845/posts?hl=en_US" target="_blank"><img src="Images/googleplusR32.png"></img></a></li>
+							<li><a style="outline: none;" href="http://choicio.tumblr.com" target="_blank"><img src="Images/rssR32.png"></img></a></li>
 						</ul>
 					</div>
 				</div>
@@ -821,6 +867,38 @@
 				$(window).resize(function(){
 					gravity();
 				});//window.resize
+
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////menu
+
+				$("#menuList").hide();
+				/*$("#menu").hover(
+					function () {
+					        $("#menuList, this").stop().slideDown(300);
+					    },
+					    function () {
+					        $("#menuList, this").stop().slideUp(300);
+					    }
+				);//menu hover*/
+
+				$( "#menu" ).click(
+					function()
+					 {
+						$( "#menuList" ).slideToggle( 300 );
+					}
+				);//menu click
+				$("#menu img").hover(
+					function () {
+					        $("#menu img").attr('src', 'Images/menuSlimHover.png');
+					    },
+					    function () {
+					        $("#menu img").attr('src', 'Images/menuSlim.png');
+					    }
+				);//menu hover
+				$("#menuList ul a li").hover(function(){
+				    $(this).css("background-color","#5AD5F4");
+				}, function(){
+				    $(this).css("background-color","#FAFAFA");
+				});//menuList hover
 
 			});//document ready
 
