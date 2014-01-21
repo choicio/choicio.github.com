@@ -171,6 +171,11 @@
 		           	border-bottom-right-radius: 6px;
 		           	border-bottom-left-radius: 6px;
 		           }
+		           #chartList a
+		           {
+		           	text-decoration: none;
+		           	outline: none;
+		           }
 		           #word
 		           {
 		           	font-size: 50px;
@@ -248,27 +253,40 @@
 		           {
 		                     color: #CC2666;
 		                    font-weight:bold;
-		                     font-family: "Helvetica";
+		                     font-family: sans-serif;
 		                     text-decoration:none;
-		                     height:2.5em;
+		                     max-height:2.2em;
 		                     overflow: hidden;
+		                     line-height: 1.1em;
+		                     margin-right: 5px;
+		                     margin-top:0px;
+		                     padding-top: 2px;
 		                     
+		           }
+		           .source
+		           {
+		           	font-weight: bold;
+		           	color:#0274FF;#F97C00;#FEBF00;#FEBF00;#00A1FF;#329FE1;#9481EB;
+		           	margin-right: 4px;
+		           	background-color: #EDF5F9;#E2F0F8;
+		           	padding-right:4px;
 		           }
 		           .description
 		           {
-		                     font-size: 10px;
+		                     font-size: 12px;
 		                     color:#6D7C89;
-		                     font-family: "Tahoma";
-		                     line-height: 12px;
-		                     height:6em;
-		                     margin-top:2px;
+		                     font-family: sans-serif;
+		                     line-height: 1.1em;
+		                     max-height:4.4em;
+		                     margin-top:4px;
 		                     overflow: hidden;
+		                     margin-right: 5px;
 		           }
 		           .advertTitle
 		           {
 		                     color: #CC2666;
-		                    font-weight:bold;
-		                     font-family: "Helvetica";
+		                     font-weight:bold;
+		                     font-family: sans-serif;
 		                     text-decoration:none;
 		                     overflow: hidden;
 		                     
@@ -277,22 +295,34 @@
 		           {
 		                     font-size: 10px;
 		                     color:#6D7C89;
-		                     font-family: "Tahoma";
+		                     font-family: sans-serif;
 		                     line-height: 12px;
 		                     margin-top:2px;
 		                     overflow: hidden;
+		           }
+		           .gutter
+		           {
+		           	clear:left;
 		           }
 		           .stats
 		           {
 		                    font-size: 10px;
 		                    color:#8C7F1F;
-		                    font-family: "Arial";
+		                    font-family: sans-serif;
 		           }
 		           .thumb{
 		           	float: left;
-		           	margin-right: 10px;
+		           	margin-right: 8px;
 		           	height:100px;
+		           	width:100px;
+		           	margin-top:2px;
+		           	background-color: #3D352A;
 
+		           }
+		           .thumb img
+		           {
+		           	min-width: 100%;
+    				min-height: 100%;
 		           }
 		            .advert
 		            {
@@ -464,6 +494,7 @@
 		           	margin-top: 6px;
 		           	margin-right: 5px;
 		           	font-family: "Georgia";
+		           	font-style: italic;
 		           	font-weight: bold;
 		           	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
 		           }
@@ -578,106 +609,145 @@
 					<div id="feed">
 						<ul id="chartList">
 		 	
-						  	<li class="item">
-						  		<img class="thumb" src="Images/water.jpg">
+						  	<a href="http://www.youtube.com" target="_blank"><li class="item">
+						  		<div class="thumb"><img src="Images/water.jpg"></div>
 						  		<div class = "title">
-						    			1. World's most awesome web content's title goes in here
+						    			1. Aliquet inceptos lectus dui viverra mollis cursus netus eleifend primis
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">youtube.com</span>Habitasse id duis ipsum conubia suscipit dictumst hendrerit elit ornare leo faucibus himenaeos curabitur. Accumsan faucibus fermentum suspendisse phasellus tellus netus quisque lacus diam. Malesuada venenatis mollis cras tellus eget pretium quis
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
+						 	<a href="http://www.facebook.com" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/fall.jpg">
+						  		<div class="thumb"><img src="Images/fall.jpg"></div>
 						  		<div class = "title">
-						    			2. World's most awesome web content's title goes in here
+						    			2. Turpis est placerat feugiat dictumst cursus scelerisque ut
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">facebook.com</span>Sollicitudin inceptos gravida nam pretium lacus ante porttitor. Lobortis urna pulvinar posuere sagittis magna, taciti luctus urna aliquam. Elementum integer turpis purus proin ullamcorper cursus fusce
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
+						 	<a href="http://www.twitter.com" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/gradient.jpg">
+						  		<div class="thumb"><img src="Images/gradient.jpg"></div>
 						  		<div class = "title">
-						    			3. World's most awesome web content's title goes in here
+						    			3. Felis condimentum egestas adipiscing lacinia curabitur magna venenatis nisl suspendisse
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">twitter.com</span>Lectus mollis justo quam eros convallis consectetur. Nisl scelerisque sagittis, fermentum convallis lobortis lacinia nunc neque integer ullamcorper. Morbi nibh aliquet bibendum aliquam volutpat ut metus sociosqu malesuada senectus nunc ultricies aliquam in tincidunt
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
+						 	<a href="http://www.pinterest.com" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/tuscany.jpg">
+						  		<div class="thumb"><img src="Images/tuscany.jpg"></div>
 						  		<div class = "title">
-						    			4. World's most awesome web content's title goes in here
+						    			4. Id aliquet odio vestibulum senectus ad ultrices per molestie habitant
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">pinterest.com</span>Nec lorem duis tempus curabitur vivamus litora commodo. Dictum condimentum nullam quis luctus ullamcorper, lacinia eros purus semper. Tempus primis sociosqu orci pharetra facilisis purus adipiscing tristique faucibus morbi
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
+						 	<a href="http://en.wikipedia.com" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/green.jpg">
+						  		<div class="thumb"><img src="Images/green.jpg"></div>
 						  		<div class = "title">
-						    			5. World's most awesome web content's title goes in here
+						    			5. Eget id ut proin neque habitant
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">en.wikipedia.com</span>Curabitur netus curae scelerisque diam nibh ante sodales integer. A ad venenatis vivamus libero iaculis tellus malesuada tempor amet. Augue ut porttitor feugiat fusce, mauris libero primis nec viverra ac
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  	
 						 	</li>
+						 	</a>
+						 	<a href="http://www.youtube.com/choicio" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/grey.jpg">
+						  		<div class="thumb"><img src="Images/grey.jpg"></div>
 						  		<div class = "title">
-						    			6. World's most awesome web content's title goes in here 
+						    			6. Ac lacinia vulputate nullam curabitur nibh auctor nibh non consequat
 						    		</div>
 						    		<div class = "description">
-						    		  	world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    		  	<span class="source">youtube.com/choicio</span>Suscipit egestas rhoncus praesent condimentum pulvinar lacinia tortor. Sem metus feugiat auctor commodo praesent aenean nunc. Proin pulvinar interdum vulputate quam justo
 						    		</div>
+						    		<div class="gutter">
+						  		</div>
 						    						  							  		
 						 	</li>
+						 	</a>
+						 	<a href="http://choicio.tumblr.com" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/leaf.jpg">
+						  		<div class="thumb"><img src="Images/leaf.jpg"></div>
 						  		<div class = "title">
-						    			7. World's most awesome web content's title goes in here
+						    			7. Rhoncus fermentum taciti est lacinia euismod libero
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">choicio.tumblr.com</span>Magna vulputate quis himenaeos taciti iaculis suscipit class. Suscipit varius ultricies vestibulum cras ullamcorper. Nunc pretium sem lorem commodo scelerisque
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
+						 	<a href="http://www.linkedin.com/choicio" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/orange.jpg">
+						  		<div class="thumb"><img src="Images/orange.jpg"></div>
 						  		<div class = "title">
-						    			8. World's most awesome web content's title goes in here
+						    			8. Fringilla vivamus faucibus malesuada nostra integer
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">linkedin.com</span>Eget venenatis vehicula quis donec tincidunt tristique. Risus curae curabitur magna, aliquam quis commodo vitae non ornare lacinia odio at ultrices nullam. Dictumst dui mattis ornare cursus ornare aliquam interdum enim
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
+						 	<a href="http://www.stackoverflow.com" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/sunlight.jpg">
+						  		<div class="thumb"><img  src="Images/sunlight.jpg"></div>
 						  		<div class = "title">
-						    			9. World's most awesome web content's title goes in here
+						    			9. Aliquam vestibulum vivamus congue felis eu aliquam lacus
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">stackoverflow.com</span>Etiam curae nullam taciti turpis etiam massa maecenas risus ullamcorper arcu. Suspendisse ante rhoncus condimentum sollicitudin suscipit risus fringilla phasellus ultricies vel. Nam felis quisque sagittis vivamus interdum inceptos tortor etiam curabitur fermentum nisi lectus
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
+						 	<a href="http://www.buzzfeed.com" target="_blank"><li class="item">
 						 	<li class="item">
-						  		<img class="thumb" src="Images/teal.jpg">
+						  		<div class="thumb"><img src="Images/teal.jpg"></div>
 						  		<div class = "title">
-						    			10. World's most awesome web content's title goes in here
+						    			10. Curabitur varius ipsum adipiscing torquent quisque hendrerit
 						  		</div>
 						  		<div class = "description">
-						    			world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here. world's best content's description goes here
+						    			<span class="source">buzzfeed.com</span>Non ut enim tortor volutpat egestas nunc dui, feugiat fusce eu at purus aenean fusce. Suscipit sagittis tortor vitae placerat sapien convallis netus posuere neque nam
+						  		</div>
+						  		<div class="gutter">
 						  		</div>
 						  		
 						 	</li>
+						 	</a>
 
 
 						 </ul>
@@ -721,15 +791,19 @@
 
 
 		<script type="text/x-handlebars-template" id="itemTemplate">
+			<a href="{{url}}" target="_blank">
 			<li class="item">
-		 		<img class="thumb" src="Images/teal.jpg">
+		 		<img class="thumb" src="{{thumb}}">
 		 		<div class = "title">
-		   			{{ title }}
+		   			{{title}}
 		 		</div>
 		 		<div class = "description">
-		   			{{ description }}
+		   			<span class="source">{{source}}</span>{{description}}
 		 		</div>
-		 	</li>
+		 		<div class="gutter">
+		 		</div>
+			</li>
+			</a>	
 		</script>
 
 		<script>
@@ -748,6 +822,7 @@
 			    $(window).scroll(sticky_relocate);
 			    sticky_relocate();
 			});
+
 
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////pitch animation
 
@@ -882,22 +957,73 @@
 				$( "#menu" ).click(
 					function()
 					 {
-						$( "#menuList" ).slideToggle( 300 );
+						$( "#menuList" ).slideToggle( 300);
+						return false;
+						
 					}
 				);//menu click
+				$(document).click(function() {
+				        // all dropdowns
+				        $("#menuList").slideUp(300);
+				        $("#menu img").attr('src', 'Images/menuSlim.png');
+				    });
+
+				/*$("#menu").click(
+					function () 
+					{
+				    		$("#menuList").animate({
+				        			height: "toggle",
+				        			opacity: "toggle"
+				    		}, 300);
+				});//menu click	*/
+
+
 				$("#menu img").hover(
 					function () {
-					        $("#menu img").attr('src', 'Images/menuSlimHover.png');
+						$("#menu img").attr('src', 'Images/menuSlimHover.png');
 					    },
 					    function () {
-					        $("#menu img").attr('src', 'Images/menuSlim.png');
+					           $("#menu img").attr('src', 'Images/menuSlim.png');
 					    }
 				);//menu hover
 				$("#menuList ul a li").hover(function(){
-				    $(this).css("background-color","#5AD5F4");
+				    $(this).css("background-color","#FED200");
 				}, function(){
 				    $(this).css("background-color","#FAFAFA");
 				});//menuList hover
+
+				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////markread
+
+				$( "#chartList" ).on("click", " a li", 
+					function()
+					 {
+						$(this).css("background-color","#D9EFFC");
+					}
+				);//itemclick
+
+
+				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////candyroll
+
+				/*(function() {
+				  var rotation = 0;
+				  var scrollLoc = $(document).scrollTop();
+
+				  $(window).scroll(function() {
+				    
+				    var newLoc = $(document).scrollTop();
+				    var diff = scrollLoc - newLoc;
+				    rotation += diff, scrollLoc = newLoc;
+				    var rotationStr = "rotate(" + rotation + "deg)";
+				    
+				    $("#hypno").css({
+				      "-webkit-transform": rotationStr,
+				      "-moz-transform": rotationStr,
+				      "transform": rotationStr});//css flip
+
+				  });//scroll event
+
+				})//function*/
+
 
 			});//document ready
 
