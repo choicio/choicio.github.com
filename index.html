@@ -123,7 +123,7 @@
 		           }
 		           #chart
 		           {
-		           	height:1784px;3000px;
+		           	height:1943px;1895px;3000px;
 
 		           }
 		           #feed
@@ -281,7 +281,7 @@
 		           .description
 		           {
 		                     font-size: 12px;
-		                     color:#6D7C89;
+		                     color:#6D7C89;#555555;
 		                     font-family: sans-serif;
 		                     line-height: 1.1em;
 		                     max-height:4.4em;
@@ -811,6 +811,9 @@
 						 	</li>
 						 </ul>	 
 					</div>
+					<div>
+						<img src="Images/pullString.png">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -958,6 +961,7 @@
 				{
 					var window_width = $(window).width();
 					var window_height = $(window).height();
+					//console.log(window_height);
 					var container = $("#pitch");
 					container.css('left', (window_width / 2) - (container.width() / 2));
 					if(window_height<container.height()){
