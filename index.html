@@ -31,6 +31,7 @@
 
 		<style type="text/css">
 		            <!--
+		            *:focus {outline: none;}
 		            body
 		           {
 			           background: none repeat scroll 0% 0% #988569; /* background */
@@ -132,6 +133,7 @@
 		           	border-bottom-right-radius: 6px;
 		           	border-bottom-left-radius: 6px;
 		           	padding-top: 0px;
+		           	/*box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);*/
 		           }
 		           #pitch
 		           {
@@ -946,6 +948,12 @@
 			      	                    			$("#chartList").append(template(q));
 			      	                    		});//each
 
+			      	                    	 	var window_height = $(window).height();
+			      	                    	 	var feed_height = $("#feed").height();
+			      	                    	 	var chart_height = (window_height+feed_height)-265;
+			      	                    	 	//console.log("feed height: "+feed_height);
+			      	                    		$("#chart").css("height",chart_height);	
+
 			      	                    	},//success
 			      	                    	error: function(error){
 			      	                    		console.log(error.message);
@@ -969,6 +977,12 @@
 					}else{
 						container.css('position', 'fixed');
 					}
+
+					var feed_height = $("#feed").height();
+			      	           var chart_height = (window_height+feed_height)-265;
+			      	           console.log("feed height: "+feed_height);
+			      	           $("#chart").css("height",chart_height);
+
 				}//gravity
 
 				gravity();
@@ -1035,6 +1049,14 @@
 					}
 				);//itemclick
 
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////heightcontrol
+
+				$( "#feed" ).on( "resize", "#feed",
+					function()
+					 {
+					 	
+					}
+				);//feed resize
 
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////candyroll
 
