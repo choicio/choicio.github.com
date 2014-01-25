@@ -813,8 +813,8 @@
 						 	</li>
 						 </ul>	 
 					</div>
-					<div style="width:24px; margin-left:auto; margin-right:auto;">
-						<img id="pullString"  style="cursor:pointer;" src="Images/pullString.png">
+					<div style="width:24px; margin-left:auto; margin-right:auto; overflow:hidden;">
+						<img id="pullString"  style="cursor:pointer; margin-top:-10px;" src="Images/pullString.png">
 					</div>
 				</div>
 			</div>
@@ -1063,11 +1063,19 @@
 				$( "#pullString" ).on("click",
 					function()
 					 {
-						var n = $(window).scrollTop()+100;
-						$("html, body").animate({ scrollTop: n}, 500);
-						$("html, body").animate({ scrollTop: $("#chartList").offset().top - 110}, 1000);
-						console.log("scroll position: "+ $("html, body").scrollTop());
-  						return false;
+						//var n = $(window).scrollTop()+100;
+						//$("html, body").animate({ scrollTop: n}, 500);
+
+						$("#pullString").animate({ "margin-top": "-=20px"}, 300, function() {
+								$("#pullString").animate({ "margin-top": "+=30px"}, 400, function() {
+									$("html, body").animate({ scrollTop: $("#chartList").offset().top - 110}, 1000, function(){
+										$("#pullString").css("margin-Top","-10px");
+									});//strinRestore
+								});//stringDown
+							});//stringUp
+						
+						//$("#pullString").animate({ "margin-top": "0px"}, 1000);//restore
+						return false;
 					}
 				);//pullStringClicked
 
