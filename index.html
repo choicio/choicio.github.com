@@ -545,6 +545,46 @@
 		           	padding-top:8px;
 		           	padding-bottom:8px;
 		           }
+		            #interestsList
+		           {
+		           	/*background-color: #FED200;#FAFAFA;#FEBF00;#3D352A;*/
+		           	position: absolute;
+		           	width:480px;150px;
+		           	
+		           	
+		           	border-radius: 3px;
+		           	margin-top: 0px;
+		           	margin-right: 5px;
+		           	font-family: "Georgia";
+		           	font-style: italic;
+		           	font-weight: bold;
+		           	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+		           }
+		           #interestsList ul
+		           {
+		           	background-color:#F9F6F4;#FED200;#FAFAFA;#FEBF00;#3D352A;
+		           	border-radius: 4px;
+		           }
+		           #interestsList ul li
+		           {
+		           	border-bottom: 1px dotted #988569; 
+		           	padding-left:30px;
+		           	padding-right:40px;
+		           	padding-top:8px;
+		           	padding-bottom:8px;
+		           }
+		           #triangle {
+
+		               font-size:0px;
+		               line-height:0px;
+		               width:0px;
+		               border-bottom:8px solid #F9F6F4;
+		               border-left:6px solid transparent;
+		               border-right:6px solid transparent;
+		               position:absolute;
+		               left:240px;
+		               margin-top:-7px;
+		           }
 
 
 
@@ -639,6 +679,20 @@
 								<li id="interests"><img src="Images/interestsTrans.png" style="margin-left:20px; margin-right:20px;"></li>
 								<li id="gears"><img src="Images/gearsTrans.png"></li>
 							</ul>
+						</div>
+						<div style="width:480px;">
+						
+						<div id="interestsList">
+						<div id="triangle"></div>
+							<ul style="list-style-type: none; padding-left:0px; margin-top:0px; margin-bottom:0px; border-radius: 3px;">
+								<li style="padding-top:8px;border-top-right-radius:3px;border-top-left-radius:3px;">web development</li>
+								<li>technology</li>
+								<li>basketball</li></a>
+								<li>fitness</li></a>
+								<li>travel</li></a>
+								<li style="border-bottom: 2px none #988569;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;">adventure</li>
+							</ul>
+						</div>
 						</div>
 						
 						
@@ -1040,7 +1094,8 @@
 				$(document).click(function() {
 				        // all dropdowns
 				        $("#menuList").slideUp(300);
-				        $("#menu img").attr('src', 'Images/menuSlim.png');
+				        $("#interestsList").slideUp(300);
+				        //$("#menu img").attr('src', 'Images/menuSlim.png');
 				    });
 
 				/*$("#menu").click(
@@ -1118,6 +1173,17 @@
 
 				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////chartBar
 
+				$("#interestsList").hide();
+				$( "#interests" ).click(
+					function()
+					 {
+						$( "#interestsList" ).slideToggle( 300);
+						return false;
+						
+					}
+				);//interests click
+
+
 				$("#date").hover(
 					function () {
 						$("#date img").attr('src', 'Images/dateYellow.png');
@@ -1144,6 +1210,8 @@
 					           $("#gears img").attr('src', 'Images/gearsTrans.png');
 					    }
 				);//gears hover
+
+
 
 
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////candyroll
