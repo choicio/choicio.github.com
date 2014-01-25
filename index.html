@@ -216,7 +216,7 @@
 		            	margin-top: 6px;
 		            	margin-right: auto;
 		            	margin-left: auto;
-		            	width:124px;
+		            	width:125px;
 		            }
 		            #search {
 
@@ -478,7 +478,22 @@
 		           	padding-left:0px;
 		           	
 		           }
-		           #social ul li { display: inline; }
+		           #social ul li { display: inline;}
+
+		           #commands
+		           {
+		           	margin: 0px;
+		           }
+		           #commands ul
+		           {
+		           	list-style-type: none;
+		           	text-align: center;
+		           	border-style: none none none none;
+		           	padding-left:0px;
+		           	margin: 4px;
+		           	
+		           }
+		           #commands ul li { display: inline; cursor:pointer;}
 
 		           ::selection {		
 		           background:#FEBF00;
@@ -618,6 +633,13 @@
 						<form id="search">
 						  <input id="searchbox" type="text" size="40" placeholder="eg web development" />
 						</form>
+						<div id="commands">
+							<ul>
+								<li id="date"><img src="Images/dateTrans.png"></li>
+								<li id="interests"><img src="Images/interestsTrans.png" style="margin-left:20px; margin-right:20px;"></li>
+								<li id="gears"><img src="Images/gearsTrans.png"></li>
+							</ul>
+						</div>
 						
 						
 
@@ -1093,6 +1115,35 @@
 						return false;
 					}
 				);//pullStringClicked
+
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////chartBar
+
+				$("#date").hover(
+					function () {
+						$("#date img").attr('src', 'Images/dateYellow.png');
+					    },
+					    function () {
+					           $("#date img").attr('src', 'Images/dateTrans.png');
+					    }
+				);//date hover
+
+				$("#interests").hover(
+					function () {
+						$("#interests img").attr('src', 'Images/interestsYellow.png');
+					    },
+					    function () {
+					           $("#interests img").attr('src', 'Images/interestsTrans.png');
+					    }
+				);//interests hover
+
+				$("#gears").hover(
+					function () {
+						$("#gears img").attr('src', 'Images/gearsYellow.png');
+					    },
+					    function () {
+					           $("#gears img").attr('src', 'Images/gearsTrans.png');
+					    }
+				);//gears hover
 
 
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////candyroll
