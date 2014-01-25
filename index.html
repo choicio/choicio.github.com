@@ -14,6 +14,7 @@
 
 		<script src="Js/jquery.min.js"></script>
 		<script type="text/javascript" src="Js/tinycarousel.js"></script>
+		<script type="text/javascript" src="Js/jQueryRotateCompressed.js"></script>
 		<script src="Js/handlebars1.3.0min.js"></script>
 		<script src="Js/handlebars1.3.0.js"></script>
 		<script src="Js/parse-1.2.16.min.js"></script>
@@ -544,7 +545,7 @@
 
 		<div id="toolbar">
 			<div id="menu"><img src="Images/menuSlim.png" ></div>
-			<div id="logo"><img src="Images/candy_02_cropped_28.png" ><img src="Images/Logo_Choicio_Sticker_28.png"></div>
+			<div id="logo"><img id="candy" src="Images/candy_02_cropped_28.png" ><img src="Images/Logo_Choicio_Sticker_28.png"></div>
 			<div id="menuList">
 				<ul style="list-style-type: none; padding-left:0px; margin-top:0px; margin-bottom:0px; border-radius: 3px;">
 					<a style="text-decoration: none; color: #333333;#3D352A; outline: none;" href="info.html" target="_blank"><li style="padding-top:8px;border-top-right-radius:3px;border-top-left-radius:3px;">about</li></a>
@@ -844,18 +845,22 @@
 		<script>
 			
 			function sticky_relocate() {
-			    var window_top = $(window).scrollTop()+40;
-			    var div_top = $('#chartBarAnchor').offset().top;
-			    if (window_top > div_top) {
-			        $('#chartBar').addClass('stick');
-			    } else {
-			        $('#chartBar').removeClass('stick');
-			    }
+				var window_top = $(window).scrollTop()+40;
+			    	var div_top = $('#chartBarAnchor').offset().top;
+			    	if (window_top > div_top) {
+			        	$('#chartBar').addClass('stick');
+			    	} 
+			    	else {
+			        		$('#chartBar').removeClass('stick');
+			    	}
+
+			    	$("#candy").rotate(window_top);
+
 			}//sticky_relocate()
 
 			$(function () {
-			    $(window).scroll(sticky_relocate);
-			    sticky_relocate();
+				$(window).scroll(sticky_relocate);
+			    	sticky_relocate();
 			});
 
 
@@ -1111,6 +1116,12 @@
 				  });//scroll event
 
 				})//function*/
+				
+				//var angle = 0;
+				//setInterval(function(){
+				  //    angle+=3;
+				    // $("#candy").rotate(angle);
+				//},50);
 
 
 			});//document ready
