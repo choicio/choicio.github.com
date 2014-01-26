@@ -482,7 +482,7 @@
 
 		           #commands
 		           {
-		           	margin: 0px;
+		           	margin-top: 5px;
 		           }
 		           #commands ul
 		           {
@@ -550,8 +550,6 @@
 		           	/*background-color: #FED200;#FAFAFA;#FEBF00;#3D352A;*/
 		           	position: absolute;
 		           	width:480px;150px;
-		           	
-		           	
 		           	border-radius: 3px;
 		           	margin-top: 0px;
 		           	margin-right: 5px;
@@ -572,6 +570,7 @@
 		           	padding-right:40px;
 		           	padding-top:8px;
 		           	padding-bottom:8px;
+		           	color:#CC2666;
 		           }
 		           #triangle {
 
@@ -582,7 +581,7 @@
 		               border-left:6px solid transparent;
 		               border-right:6px solid transparent;
 		               position:absolute;
-		               left:240px;
+		               left:230px;
 		               margin-top:-7px;
 		           }
 
@@ -687,10 +686,11 @@
 							<ul style="list-style-type: none; padding-left:0px; margin-top:0px; margin-bottom:0px; border-radius: 3px;">
 								<li style="padding-top:8px;border-top-right-radius:3px;border-top-left-radius:3px;">web development</li>
 								<li>technology</li>
-								<li>basketball</li></a>
-								<li>fitness</li></a>
-								<li>travel</li></a>
-								<li style="border-bottom: 2px none #988569;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;">adventure</li>
+								<li>humor</li>
+								<li>basketball</li>
+								<li>fitness</li>
+								<li>travel</li>
+								<li style="border-bottom: 2px none #988569;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;">bollywood</li>
 							</ul>
 						</div>
 						</div>
@@ -881,7 +881,7 @@
 						 	<li class="item moreLast">
 						 		<div class="rant">
 						 	  	</div>
-						 	  	<img src="Images/whiningmonkey.gif">
+						 	  	<img src="Images/whiningmonkey.gif" >
 						 		<div class="love">
 						 	  		<div class="begLast">
 						 	    			<div class="shareLast"></div>
@@ -1015,7 +1015,7 @@
 			      	 	e.preventDefault();
 			      	 	if (e.which == 13) 
 			      	 	{
-			      	                    console.log("enter pressed");
+			      	                   //console.log("enter pressed");
 
 			      	                    var Content = Parse.Object.extend("Content");
 			      	                    var query = new Parse.Query(Content);
@@ -1037,7 +1037,7 @@
 
 			      	                    	},//success
 			      	                    	error: function(error){
-			      	                    		console.log(error.message);
+			      	                    		//console.log(error.message);
 			      	                    	}//error
 			      	                    });//query.find
 			      	           }
@@ -1061,7 +1061,7 @@
 
 					var feed_height = $("#feed").height();
 			      	           var chart_height = (window_height+feed_height)-265;
-			      	           console.log("feed height: "+feed_height);
+			      	           //console.log("feed height: "+feed_height);
 			      	           $("#chart").css("height",chart_height);
 
 				}//gravity
