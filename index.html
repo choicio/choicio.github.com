@@ -106,6 +106,8 @@
 		           	border-color: #988569;#FEBF00;#3D352A;#ffffff;
 		           	border-top-width: 2px;
 		           	/*height:1000000px;*/
+		           	/*box-shadow: 0px 1px 2px rgba(0, 0, 0, 1), 0px 1px 0px rgba(255, 255, 255, 0.3) inset;*/
+		           	          	
 
 		           }
 		           #chartContainer
@@ -225,6 +227,10 @@
 
 		            #search input[type="text"] {
 		                background: url("Images/lookingGlass.png") no-repeat 10px 6px #444;
+		                /*-moz-background-size:100% 100%;
+		                -webkit-background-size:200% 300%;
+		                background-size:200% 300%;
+		                background-position: 0px 0px;*/
 		                border: 0 none;
 		                font: bold 12px Arial,Helvetica,Sans-serif;
 		                color: #d7d7d7;
@@ -238,20 +244,20 @@
 		                -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
 		                -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
 		                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-		                -webkit-transition: all 0.7s ease 0s;
-		                -moz-transition: all 0.7s ease 0s;
-		                -o-transition: all 0.7s ease 0s;
-		                transition: all 0.7s ease 0s;
 		                }
 
 		            #search input[type="text"]:focus {
 		                background: url("Images/lookingGlass.png") no-repeat 10px 6px #fcfcfc;
-		                color: #6a6f75;
+		                /*-moz-background-size:200% 300%;
+		                -webkit-background-size:200% 300%;
+		                background-size:200% 300%;*/
+		                /*background-position: 0px 0px;*/
+		                color: #333333;
 		                -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
 		                -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
 		                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
 		                text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-		                box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+		                box-shadow: 0 0 5px rgba(252, 90, 147, 1);
 		                }
 
 		           #chartList a li
@@ -560,7 +566,7 @@
 		           }
 		           #interestsList ul
 		           {
-		           	background-color:#F9F6F4;#FED200;#FAFAFA;#FEBF00;#3D352A;
+		           	background-color:#F0EEE9;#F9F6F4;#FED200;#FAFAFA;#FEBF00;#3D352A;
 		           	border-radius: 4px;
 		           }
 		           #interestsList ul li
@@ -570,14 +576,15 @@
 		           	padding-right:40px;
 		           	padding-top:8px;
 		           	padding-bottom:8px;
-		           	color:#CC2666;
+		           	color:#CC2666;#FEBF00;#FF6A0D;
+		           	cursor: pointer;
 		           }
 		           #triangle {
 
 		               font-size:0px;
 		               line-height:0px;
 		               width:0px;
-		               border-bottom:8px solid #F9F6F4;
+		               border-bottom:8px solid #F0EEE9;
 		               border-left:6px solid transparent;
 		               border-right:6px solid transparent;
 		               position:absolute;
@@ -638,7 +645,7 @@
 					</div>
 					
 					
-					<div id="explanation"><br><span style="text-shadow: 1px 1px 1px rgba(39, 40, 34, 0.8);">daily updated popularity charts for web content. sort of billboard top 100 of web content. the most shared, liked, tweeted, pinned content matching your interests. never miss. worthy. time well spent. systematic. give it a try. what is an interest. what is popularity and best. technology. login</span></div>
+					<div id="explanation"><br><span style="text-shadow: 1px 1px 1px rgba(39, 40, 34, 1);">daily updated popularity charts for web content. sort of billboard top 100 of web content. the most shared, liked, tweeted, pinned content matching your interests. never miss. worthy. time well spent. systematic. give it a try. what is an interest. what is popularity and best. technology. login</span></div>
 
 					
 					<div id="social">
@@ -684,7 +691,7 @@
 						<div id="interestsList">
 						<div id="triangle"></div>
 							<ul style="list-style-type: none; padding-left:0px; margin-top:0px; margin-bottom:0px; border-radius: 3px;">
-								<li style="padding-top:8px;border-top-right-radius:3px;border-top-left-radius:3px;">web development</li>
+								<li style="padding-top:8px;border-top-right-radius:3px;border-top-left-radius:3px;">web development <span style="font-weight: normal; font-size:14px; color:#333333;">frontend, backend, python, django, php</span></li>
 								<li>technology</li>
 								<li>humor</li>
 								<li>basketball</li>
@@ -819,7 +826,7 @@
 						 	</a>
 						 	<a href="http://www.stackoverflow.com" target="_blank">
 						 	<li class="item">
-						  		<div class="thumb"><img  src="Images/sunlight.jpg"></div>
+						  		<div class="thumb"><img  src="http://i.crackedcdn.com/phpimages/article/9/7/9/238979.jpg?v=1"></div>
 						  		<div class = "title">
 						    			9. Aliquam vestibulum vivamus congue felis eu aliquam lacus
 						  		</div>
@@ -833,7 +840,7 @@
 						 	</a>
 						 	<a href="http://www.buzzfeed.com" target="_blank">
 						 	<li class="item">
-						  		<div class="thumb"><img src="Images/teal.jpg"></div>
+						  		<div class="thumb"><img src="http://i.crackedcdn.com/phpimages/article/0/9/7/239097.jpg?v=1"></div>
 						  		<div class = "title">
 						    			10. Curabitur varius ipsum adipiscing torquent quisque hendrerit
 						  		</div>
@@ -924,7 +931,7 @@
 				var window_top = $(window).scrollTop()+40;
 			    	var div_top = $('#chartBarAnchor').offset().top;
 			    	if (window_top > div_top) {
-			        	$('#chartBar').addClass('stick');
+			        		$('#chartBar').addClass('stick');
 			    	} 
 			    	else {
 			        		$('#chartBar').removeClass('stick');
@@ -1017,6 +1024,8 @@
 			      	 	{
 			      	                   //console.log("enter pressed");
 
+			      	                    $("#search input[type='text'] ").css("background-position","0px 0px");
+			      	                    $("#search input[type='text'] ").css("background-image","url('Images/cane.gif')");
 			      	                    var Content = Parse.Object.extend("Content");
 			      	                    var query = new Parse.Query(Content);
 			      	                    query.descending("creed");
@@ -1033,7 +1042,11 @@
 			      	                    	 	var feed_height = $("#feed").height();
 			      	                    	 	var chart_height = (window_height+feed_height)-265;
 			      	                    	 	//console.log("feed height: "+feed_height);
-			      	                    		$("#chart").css("height",chart_height);	
+			      	                    		$("#chart").css("height",chart_height);
+			      	                    		$("#search input[type='text'] ").css("background-image","url('Images/lookingGlass.png')");
+			      	                    		$("#search input[type='text'] ").css("background-position","10px 6px");
+			      	                    		//$( "#search input[type='text'] " ).blur();
+			      	                    		//$("#search input[type='text'] ").css("background-color","#444");	
 
 			      	                    	},//success
 			      	                    	error: function(error){
@@ -1131,7 +1144,7 @@
 					}
 				);//itemclick
 
-				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////heightcontrol
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////heightcontrol
 
 				$( "#feed" ).on( "resize", "#feed",
 					function()
@@ -1183,6 +1196,12 @@
 					}
 				);//interests click
 
+				$("#interestsList ul li").hover(function(){
+				    $(this).css("background-color","#ffffff");
+				}, function(){
+				    $(this).css("background-color","#F0EEE9");
+				});//interestsList hover
+
 
 				$("#date").hover(
 					function () {
@@ -1211,8 +1230,7 @@
 					    }
 				);//gears hover
 
-
-
+				
 
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////candyroll
 
