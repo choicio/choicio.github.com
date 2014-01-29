@@ -1017,46 +1017,62 @@
 			      	pitchSlider.tinycarousel_start();
 
 			      	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////parse
+			      	
+				/*$('#searchbox').on("input", function()
+			      	{
+			      	 	//e.preventDefault();
+			      	 	var dInput = this.value;
+			      	 	console.log(dInput);
+			      	 });*/
+
 			      	$('#searchbox').keypress(function (e)
 			      	{
-			      	 	e.preventDefault();
+			      		//e.preventDefault();
+			      	 	//if (e.which == 13) 
 			      	 	if (e.which == 13) 
 			      	 	{
 			      	                   //console.log("enter pressed");
-
+			      	                    e.preventDefault();
 			      	                    $("#search input[type='text'] ").css("background-position","0px 0px");
 			      	                    $("#search input[type='text'] ").css("background-image","url('Images/cane.gif')");
-			      	                    var Content = Parse.Object.extend("Content");
-			      	                    var query = new Parse.Query(Content);
-			      	                    query.descending("creed");
-			      	                    query.limit(10);
-			      	                    query.find({
-			      	                    	success: function(results){
-			      	                    		var template  = Handlebars.compile($("#itemTemplate").html());
-			      	                    		$(results).each(function(i,e){
-			      	                    			var q = e.toJSON();
-			      	                    			$("#chartList").append(template(q));
-			      	                    		});//each
+			      	                    hitParse();
 
-			      	                    	 	var window_height = $(window).height();
-			      	                    	 	var feed_height = $("#feed").height();
-			      	                    	 	var chart_height = (window_height+feed_height)-265;
-			      	                    	 	//console.log("feed height: "+feed_height);
-			      	                    		$("#chart").css("height",chart_height);
-			      	                    		$("#search input[type='text'] ").css("background-image","url('Images/lookingGlass.png')");
-			      	                    		$("#search input[type='text'] ").css("background-position","10px 6px");
-			      	                    		//$( "#search input[type='text'] " ).blur();
-			      	                    		//$("#search input[type='text'] ").css("background-color","#444");	
-
-			      	                    	},//success
-			      	                    	error: function(error){
-			      	                    		//console.log(error.message);
-			      	                    	}//error
-			      	                    });//query.find
-			      	           }
+			      	           }//check press enter
+			      	           //return false;
 
 			      	});//enter keypress
+				
+				function hitParse(){
+					var Content = Parse.Object.extend("Content");
+					var query = new Parse.Query(Content);
+					query.descending("creed");
+					query.limit(10);
+					query.find({
+						success: function(results){
+							var template  = Handlebars.compile($("#itemTemplate").html());
+							$(results).each(function(i,e){
+								var q = e.toJSON();
+								$("#chartList").append(template(q));
+							});//each
 
+						 	var window_height = $(window).height();
+						 	var feed_height = $("#feed").height();
+						 	var chart_height = (window_height+feed_height)-265;
+						 	//console.log("feed height: "+feed_height);
+							$("#chart").css("height",chart_height);
+							$("#search input[type='text'] ").css("background-image","url('Images/lookingGlass.png')");
+							$("#search input[type='text'] ").css("background-position","10px 6px");
+							//$( "#search input[type='text'] " ).blur();
+							//$("#search input[type='text'] ").css("background-color","#444");	
+
+						},//success
+						error: function(error){
+							//console.log(error.message);
+							}//error
+					});//query.find
+
+				}//hitParse()
+				
 				////////////////////////////////////////////////////////////////////////////////////////////////////////////////resposive
 
 				function gravity()
