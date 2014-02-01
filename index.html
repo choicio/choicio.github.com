@@ -380,7 +380,7 @@
 		           	width:152px;
 		           	font-family: "Pacifico";
 		           	font-size: 20px;
-		           	background:#ED6298;!#5596B6;
+		           	backgrou;nd:#ED6298;!#5596B6;
 		           	padding:10px;
 		           	/*border-bottom-right-radius: 4px;*/
 		           }
@@ -409,6 +409,7 @@
 		           	padding-right: 0px;
 		           	border-bottom-right-radius: 4px;
 		           	border-bottom-left-radius: 4px;
+		           	overflow:hidden;
 		           }
 		           .begLast{
 		           	overflow: hidden;
@@ -576,7 +577,7 @@
 		           	padding-right:40px;
 		           	padding-top:8px;
 		           	padding-bottom:8px;
-		           	color:#FC5A93;#CC2666;#FEBF00;#FF6A0D;
+		           	color:#CC2666;#FEBF00;#FF6A0D;
 		           	cursor: pointer;
 		           }
 		           #triangle {
@@ -1036,6 +1037,35 @@
 			      	                    $("#search input[type='text'] ").css("background-position","0px 0px");
 			      	                    $("#search input[type='text'] ").css("background-image","url('Images/cane.gif')");
 			      	                    hitParse();
+
+			      	                   /* var Content = Parse.Object.extend("Content");
+			      	                    var query = new Parse.Query(Content);
+			      	                    query.descending("creed");
+			      	                    query.limit(10);
+			      	                    query.find({
+			      	                    	success: function(results){
+			      	                    		var template  = Handlebars.compile($("#itemTemplate").html());
+			      	                    		$(results).each(function(i,e){
+			      	                    			var q = e.toJSON();
+			      	                    			$("#chartList").append(template(q));
+			      	                    		});//each
+
+			      	                    	 	var window_height = $(window).height();
+			      	                    	 	var feed_height = $("#feed").height();
+			      	                    	 	var chart_height = (window_height+feed_height)-265;
+			      	                    	 	//console.log("feed height: "+feed_height);
+			      	                    		$("#chart").css("height",chart_height);
+			      	                    		$("#search input[type='text'] ").css("background-image","url('Images/lookingGlass.png')");
+			      	                    		$("#search input[type='text'] ").css("background-position","10px 6px");
+			      	                    		//$( "#search input[type='text'] " ).blur();
+			      	                    		//$("#search input[type='text'] ").css("background-color","#444");	
+
+			      	                    	},//success
+			      	                    	error: function(error){
+			      	                    		//console.log(error.message);
+			      	                    		}//error
+			      	                    });//query.find*/
+						
 
 			      	           }//check press enter
 			      	           //return false;
