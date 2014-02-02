@@ -1077,15 +1077,20 @@
 			      	});//enter keypress
 				
 				function hitParse(){
-					var Content = Parse.Object.extend("Content");
-					var query = new Parse.Query(Content);
+					var chart = Parse.Object.extend("chart");
+					var query = new Parse.Query(chart);
+					querySignature = $("#search input[type='text'] ").val();
+					query.equalTo("signature", querySignature);
 					query.descending("creed");
-					query.limit(10);
+					query.limit(20);
 					query.find({
 						success: function(results){
+
+							$("#chartList").html("");
 							var template  = Handlebars.compile($("#itemTemplate").html());
 							$(results).each(function(i,e){
 								var q = e.toJSON();
+
 								$("#chartList").append(template(q));
 							});//each
 
